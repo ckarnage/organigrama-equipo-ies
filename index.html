@@ -11,7 +11,7 @@ header{max-width:2516px;margin:0 auto 20px;display:flex;justify-content:space-be
 h1{font-size:clamp(28px,4vw,44px);font-weight:800;margin:0;line-height:1.05;text-wrap:balance}
 .logo{height:64px;width:auto}
 .scroll{overflow-x:auto;max-width:2516px;margin:0 auto}
-.scroll svg{display:block;min-width:1500px;width:100%;height:auto;font-family:inherit}
+.scroll svg{display:block;width:100%;height:auto;font-family:inherit}
 .stats{max-width:2516px;margin:0 auto 12px;display:flex;gap:14px;flex-wrap:wrap}
 .chip{display:flex;align-items:baseline;gap:10px;padding:10px 18px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:rgba(255,255,255,.06);animation:rise .7s cubic-bezier(.2,.8,.2,1) backwards}
 .chip:nth-child(2){animation-delay:.1s}.chip:nth-child(3){animation-delay:.2s}
@@ -49,14 +49,20 @@ h1{font-size:clamp(28px,4vw,44px);font-weight:800;margin:0;line-height:1.05;text
 .mc.lead.pm{border:3px solid #FF7F00}
 .mc.sub{background:#0B3A63;border:1.5px solid #5A8DB0;color:#fff}.mc.sub small{color:#BFD6E6}.mc.sub .av,.mc.ph .av{background:#fff;color:#004E75}
 .mc.ph{background:rgba(4,20,62,.35);border:1.5px dashed #7FA8C4;color:#fff}.mc.ph small{color:#BFD6E6}
-.trunk{margin-left:22px;border-left:3px solid #FF7F00;padding-top:18px;display:flex;flex-direction:column;gap:18px}
+.trunk{margin-left:22px;padding-top:18px;display:flex;flex-direction:column;gap:18px}
 .area{position:relative;padding-left:22px}
 .area::before{content:"";position:absolute;left:0;top:30px;width:22px;height:3px;background:#FF7F00}
 .area.dt::before{background:none;border-top:3px dotted #FF7F00;height:0}
-.kids{margin:0 0 0 28px;border-left:2px solid #7FA8C4;padding-top:12px;display:flex;flex-direction:column;gap:12px}
+.kids{margin:0 0 0 28px;padding-top:12px;display:flex;flex-direction:column;gap:12px}
 .kid{position:relative;padding-left:18px}
+.area::after{content:"";position:absolute;left:0;top:0;bottom:-18px;width:3px;background:#FF7F00}
+.area:first-child::after{top:-18px}
+.area:last-child::after{bottom:auto;height:33px}
+.kid::after{content:"";position:absolute;left:0;top:0;bottom:-12px;width:2px;background:#7FA8C4}
+.kid:first-child::after{top:-12px}
+.kid:last-child::after{bottom:auto;height:30px}
 .kid::before{content:"";position:absolute;left:0;top:28px;width:18px;height:2px;background:#7FA8C4}
-@media (max-width:999px){.scroll{display:none}.m{display:block}.logo{height:44px}.chip{padding:8px 14px}.chip b{font-size:22px}}
+@media (max-width:1279px){.scroll{display:none}.m{display:block}.logo{height:44px}.chip{padding:8px 14px}.chip b{font-size:22px}}
 @media print{.scroll{display:block!important}.m{display:none!important}}
 svg:has(.n[data-g="LM"]:hover) .n:not([data-g="LM"]):not(.l0){opacity:.22}
 svg:has(.n[data-g="LM"]:hover) .e:not([data-g~="LM"]):not([data-g="root"]){opacity:.1}
@@ -87,9 +93,9 @@ svg:has(.n[data-g="JM"]:hover) .dot{opacity:0}
 </style>
 <header><div><p class="eyebrow">EQUIPO TÉCNICO</p><h1>Organigrama del equipo</h1></div><img class="logo" width="96" height="64" alt="IES Systems" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTA5LjUyNCIgaGVpZ2h0PSI3MC4wNTUiIHZpZXdCb3g9IjAgMCAxMDkuNTI0IDcwLjA1NSI+PGRlZnM+PHN0eWxlPi5he29wYWNpdHk6MC42O30uYntmaWxsOiNmZmY7fS5je2ZpbGw6dXJsKCNhKTt9LmR7ZmlsbDp1cmwoI2IpO30uZXtmaWxsOnVybCgjYyk7fTwvc3R5bGU+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iLTAuMTAxIiB5MT0iMC43OTYiIHgyPSIwLjk0OSIgeTI9IjAuMDkxIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYmFiYWJhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIwLjc4MyIgeTE9IjAuOTUzIiB4Mj0iMC4zMTIiIHkyPSItMC4xNjEiIHhsaW5rOmhyZWY9IiNhIi8+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB5MT0iMC41IiB4Mj0iMSIgeTI9IjAuNSIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2EzYTNhMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGNsYXNzPSJhIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTAuNzc2IC00Ny4zMzkpIj48cGF0aCBjbGFzcz0iYiIgZD0iTTkwLjc3Niw0Ny45MTdIMTAyLjRWOTguMTU5SDkwLjc3NloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4yODMpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xNDUuNDksODguODI3djkuMzMyaC0zOC45VjQ3LjkxN2gzNy45Njh2OS4zM0gxMTguMTQ0djEwLjkxSDE0MS40N1Y3Ny4ySDExOC4xNDRWODguODI3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy43MjkgMC4yODMpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xNDUuMjIsOTcuNjg3YTI3LjAxNywyNy4wMTcsMCwwLDEtOC45MzYtNC4ybDMuOTQ4LTguNzU3YTI2Ljc2NywyNi43NjcsMCwwLDAsNy42NzksMy44MDUsMjguODM3LDI4LjgzNywwLDAsMCw4LjksMS40MzVxNC45NTMsMCw3LjMyMi0xLjQ3MWE0LjQ0Nyw0LjQ0NywwLDAsMCwyLjM2Ny0zLjkxMywzLjc0MSwzLjc0MSwwLDAsMC0xLjQtMi45NzksMTAuNiwxMC42LDAsMCwwLTMuNTg4LTEuOXEtMi4xOTEtLjcxNy01LjkyMS0xLjU4YTgxLjU3Myw4MS41NzMsMCwwLDEtOS40LTIuNzI3LDE1LjI2NSwxNS4yNjUsMCwwLDEtNi4yOC00LjM3OSwxMS44MTIsMTEuODEyLDAsMCwxLTIuNjItOC4wMzgsMTMuOTkyLDEzLjk5MiwwLDAsMSwyLjM2OS03LjkzMUExNS45MjgsMTUuOTI4LDAsMCwxLDE0Ni44LDQ5LjQyYTI5LjE0MywyOS4xNDMsMCwwLDEsMTEuNjYzLTIuMDgxLDM4LjY1NSwzOC42NTUsMCwwLDEsOS40LDEuMTQ4LDI3Ljc5MSwyNy43OTEsMCwwLDEsOC4wMzgsMy4zbC0zLjU4OCw4LjgyOGEyOC4wMjksMjguMDI5LDAsMCwwLTEzLjkyNS0zLjk0N3EtNC44ODIsMC03LjIxMywxLjU3OGE0LjgyMiw0LjgyMiwwLDAsMC0yLjMzMyw0LjE2Myw0LjA2Nyw0LjA2NywwLDAsMCwyLjY5MiwzLjg0LDQyLjEzMSw0Mi4xMzEsMCwwLDAsOC4yMTgsMi40NzcsODIuMTQyLDgyLjE0MiwwLDAsMSw5LjQsMi43MjcsMTUuNiwxNS42LDAsMCwxLDYuMjgxLDQuMzA2LDExLjU1NywxMS41NTcsMCwwLDEsMi42MTksNy45NjgsMTMuNzE3LDEzLjcxNywwLDAsMS0yLjQsNy44NTksMTYuMTY3LDE2LjE2NywwLDAsMS03LjIxMyw1LjYzNCwyOS40LDI5LjQsMCwwLDEtMTEuNywyLjA4MUE0MS4xMTcsNDEuMTE3LDAsMCwxLDE0NS4yMiw5Ny42ODdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMi4yNDQgMCkiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTQuMjg1IDEwNC4zNjgpIj48cGF0aCBjbGFzcz0iYiIgZD0iTTEwNy45ODYsOTQuODA5YTQuMDQ3LDQuMDQ3LDAsMCwxLTEuNDE5LS43MjFsLjUtLjg2OGE0LjE3NCw0LjE3NCwwLDAsMCwxLjI4Ni42Niw1LjE0Miw1LjE0MiwwLDAsMCwxLjYxNC4yNTUsMy4wODMsMy4wODMsMCwwLDAsMS42NTEtLjM0OCwxLjExMSwxLjExMSwwLDAsMCwuNTM0LS45ODQuODgzLjg4MywwLDAsMC0uMjk1LS43MDYsMS45NDMsMS45NDMsMCwwLDAtLjc0NC0uMzg5LDEwLjQwNiwxMC40MDYsMCwwLDAtMS4xOTQtLjI1NSwxMy43MzgsMTMuNzM4LDAsMCwxLTEuNi0uMzgxLDIuMzM5LDIuMzM5LDAsMCwxLTEuMDMyLS42NTgsMS44MzcsMS44MzcsMCwwLDEtLjQyNy0xLjI4OCwyLjAxOCwyLjAxOCwwLDAsMSwuODUzLTEuNjc1LDMuODM2LDMuODM2LDAsMCwxLDIuMzczLS42NTEsNi4yLDYuMiwwLDAsMSwxLjU4MS4yMDgsNC4zNTMsNC4zNTMsMCwwLDEsMS4zLjU1MWwtLjQ4MS44ODRhNC4xMDgsNC4xMDgsMCwwLDAtMi40LS43LDIuNzg3LDIuNzg3LDAsMCwwLTEuNTkuMzcyLDEuMTQxLDEuMTQxLDAsMCwwLS41MzQuOTc3Ljk2NS45NjUsMCwwLDAsLjMuNzQ0LDEuODU4LDEuODU4LDAsMCwwLC43NTIuNDExLDEyLjM2MSwxMi4zNjEsMCwwLDAsMS4yNC4yNzIsMTMuOSwxMy45LDAsMCwxLDEuNTY2LjM3MiwyLjI5MywyLjI5MywwLDAsMSwxLjAwOC42MzQsMS43NTEsMS43NTEsMCwwLDEsLjQyLDEuMjQyLDEuOTcyLDEuOTcyLDAsMCwxLS44OTIsMS43LDQuMjQzLDQuMjQzLDAsMCwxLTIuNDczLjYyOEE2LjIzMyw2LjIzMywwLDAsMSwxMDcuOTg2LDk0LjgwOVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDYuNTY3IC04NS4wOCkiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTEyMC44NDIsODYuODQybC00LjA3OCw5LjEzNGEzLjg4OSwzLjg4OSwwLDAsMS0xLjE0OCwxLjYyOSwyLjU2NCwyLjU2NCwwLDAsMS0xLjU2Ni40ODEsMy4yLDMuMiwwLDAsMS0xLjEtLjE4NiwyLjQsMi40LDAsMCwxLS44ODQtLjU1OGwuNTEyLS44MjJhMi4wMjYsMi4wMjYsMCwwLDAsMS40ODkuNjE5LDEuNDk0LDEuNDk0LDAsMCwwLC45NTMtLjMxLDIuODI0LDIuODI0LDAsMCwwLC43MzctMS4wNTRsLjM1Ny0uNzkxLTMuNjQ1LTguMTQyaDEuMTQ4bDMuMDcsNi45MzIsMy4wNy02LjkzMloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDMuODc5IC04NS4wNikiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTEyMC42NDEsOTQuODA5YTQuMDQ3LDQuMDQ3LDAsMCwxLTEuNDE5LS43MjFsLjUtLjg2OGE0LjE3NCw0LjE3NCwwLDAsMCwxLjI4Ni42Niw1LjE0Miw1LjE0MiwwLDAsMCwxLjYxNC4yNTUsMy4wODMsMy4wODMsMCwwLDAsMS42NTEtLjM0OCwxLjExMSwxLjExMSwwLDAsMCwuNTM0LS45ODQuODgzLjg4MywwLDAsMC0uMjk1LS43MDYsMS45NDMsMS45NDMsMCwwLDAtLjc0NC0uMzg5LDEwLjQwNywxMC40MDcsMCwwLDAtMS4xOTQtLjI1NSwxMy43NCwxMy43NCwwLDAsMS0xLjYtLjM4MSwyLjMzOSwyLjMzOSwwLDAsMS0xLjAzMi0uNjU4LDEuODM3LDEuODM3LDAsMCwxLS40MjctMS4yODgsMi4wMTgsMi4wMTgsMCwwLDEsLjg1My0xLjY3NSwzLjgzNywzLjgzNywwLDAsMSwyLjM3My0uNjUxLDYuMiw2LjIsMCwwLDEsMS41ODEuMjA4LDQuMzUzLDQuMzUzLDAsMCwxLDEuMy41NTFsLS40ODEuODg0YTQuMTA4LDQuMTA4LDAsMCwwLTIuNC0uNywyLjc4NywyLjc4NywwLDAsMC0xLjU5LjM3MiwxLjE0MSwxLjE0MSwwLDAsMC0uNTM0Ljk3Ny45NjUuOTY1LDAsMCwwLC4zLjc0NCwxLjg1OCwxLjg1OCwwLDAsMCwuNzUyLjQxMSwxMi4zNjMsMTIuMzYzLDAsMCwwLDEuMjQuMjcyLDEzLjksMTMuOSwwLDAsMSwxLjU2Ni4zNzIsMi4yOTMsMi4yOTMsMCwwLDEsMS4wMDguNjM0LDEuNzUxLDEuNzUxLDAsMCwxLC40MiwxLjI0MiwxLjk3MiwxLjk3MiwwLDAsMS0uODkyLDEuNyw0LjI0Myw0LjI0MywwLDAsMS0yLjQ3My42MjhBNi4yMzMsNi4yMzMsMCwwLDEsMTIwLjY0MSw5NC44MDlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTAwLjM4MSAtODUuMDgpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xMzAuODMsOTUuMDg4YTIuMDg2LDIuMDg2LDAsMCwxLS43NjguNDI2LDMuMDg4LDMuMDg4LDAsMCwxLS45NTMuMTQ3LDIuMTYsMi4xNiwwLDAsMS0yLjM4OC0yLjM3M1Y4OC4zNThoLTEuNDU4di0uOTNoMS40NThWODUuNjQ1aDEuMXYxLjc4MkgxMzAuM3YuOTNoLTIuNDgydjQuODdhMS41NDQsMS41NDQsMCwwLDAsLjM2NSwxLjEwOSwxLjM4MiwxLjM4MiwwLDAsMCwxLjA0Ny4zOCwyLjA1NiwyLjA1NiwwLDAsMCwuNjYtLjEwOSwxLjY3NCwxLjY3NCwwLDAsMCwuNTUxLS4zMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC05Ny40MjkgLTg1LjY0NSkiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTEzOC41Niw5MS4yODJoLTYuODIyYTIuOTEyLDIuOTEyLDAsMCwwLC45NzcsMi4wNTUsMy4yMzksMy4yMzksMCwwLDAsMi4yMzMuNzgzLDMuNTMyLDMuNTMyLDAsMCwwLDEuNC0uMjcxLDMuMDUxLDMuMDUxLDAsMCwwLDEuMS0uOGwuNjIxLjcxM2EzLjUsMy41LDAsMCwxLTEuMzU2Ljk5Myw0LjU4Nyw0LjU4NywwLDAsMS0xLjc5MS4zNDEsNC41MzcsNC41MzcsMCwwLDEtMi4yMjYtLjUzNCwzLjg1NiwzLjg1NiwwLDAsMS0xLjUxMS0xLjQ4MSw0LjIsNC4yLDAsMCwxLS41NDMtMi4xMzksNC4zNjksNC4zNjksMCwwLDEsLjUyLTIuMTQxLDMuNzU5LDMuNzU5LDAsMCwxLDEuNDI2LTEuNDcyLDMuOTg1LDMuOTg1LDAsMCwxLDIuMDQtLjUyNywzLjk0LDMuOTQsMCwwLDEsMi4wMzEuNTI3LDMuNzMzLDMuNzMzLDAsMCwxLDEuNDExLDEuNDY1LDQuNDE2LDQuNDE2LDAsMCwxLC41MTIsMi4xNDhaTTEzMi42NDUsODguNWEyLjk0OCwyLjk0OCwwLDAsMC0uOTA3LDEuOTYyaDUuNzg0YTIuOTU2LDIuOTU2LDAsMCwwLS45MDgtMS45NjIsMywzLDAsMCwwLTMuOTY5LDBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTQuODAyIC04NS4wOCkiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTE1MS4xMDUsODcuNjg0YTMuNTU2LDMuNTU2LDAsMCwxLC44NzUsMi42MDV2NC43M2gtMS4xVjkwLjRhMi43NjYsMi43NjYsMCwwLDAtLjYxMy0xLjkzOCwyLjIzMSwyLjIzMSwwLDAsMC0xLjcyOC0uNjY3LDIuNiwyLjYsMCwwLDAtMiwuNzgzLDMuMDQ5LDMuMDQ5LDAsMCwwLS43MywyLjE2M3Y0LjI4aC0xLjFWOTAuNGEyLjc3MywyLjc3MywwLDAsMC0uNjEyLTEuOTM4LDIuMjUzLDIuMjUzLDAsMCwwLTEuNzQ1LS42NjcsMi42MDgsMi42MDgsMCwwLDAtMS45OTIuNzgzLDMuMDMyLDMuMDMyLDAsMCwwLS43MzcsMi4xNjN2NC4yOGgtMS4xVjg2Ljg2MmgxLjA1NHYxLjQ4OWEyLjkzNCwyLjkzNCwwLDAsMSwxLjIwOS0xLjE0NiwzLjgsMy44LDAsMCwxLDEuNzg0LS40LDMuNSwzLjUsMCwwLDEsMS43NzYuNDMzLDIuNjgzLDIuNjgzLDAsMCwxLDEuMTI0LDEuMjg4LDMuMTczLDMuMTczLDAsMCwxLDEuMy0xLjI2NCwzLjk4MiwzLjk4MiwwLDAsMSwxLjkyOS0uNDU3QTMuMjQ1LDMuMjQ1LDAsMCwxLDE1MS4xMDUsODcuNjg0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTkwLjk0OCAtODUuMDgpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xNTEuMjczLDk0LjgwOWE0LjA2LDQuMDYsMCwwLDEtMS40MTktLjcyMWwuNS0uODY4YTQuMTY2LDQuMTY2LDAsMCwwLDEuMjg4LjY2LDUuMTMyLDUuMTMyLDAsMCwwLDEuNjEyLjI1NSwzLjA4MywzLjA4MywwLDAsMCwxLjY1MS0uMzQ4LDEuMTA4LDEuMTA4LDAsMCwwLC41MzQtLjk4NC44ODMuODgzLDAsMCwwLS4yOTUtLjcwNiwxLjk0MywxLjk0MywwLDAsMC0uNzQ0LS4zODksMTAuNDA3LDEwLjQwNywwLDAsMC0xLjE5NC0uMjU1LDEzLjczOCwxMy43MzgsMCwwLDEtMS42LS4zODEsMi4zMzksMi4zMzksMCwwLDEtMS4wMzItLjY1OCwxLjgzNiwxLjgzNiwwLDAsMS0uNDI2LTEuMjg4QTIuMDE3LDIuMDE3LDAsMCwxLDE1MSw4Ny40NTJhMy44MzcsMy44MzcsMCwwLDEsMi4zNzMtLjY1MSw2LjIsNi4yLDAsMCwxLDEuNTgxLjIwOCw0LjMzNiw0LjMzNiwwLDAsMSwxLjMuNTUxbC0uNDgxLjg4NGE0LjEwOCw0LjEwOCwwLDAsMC0yLjQtLjcsMi43ODcsMi43ODcsMCwwLDAtMS41OS4zNzIsMS4xNDEsMS4xNDEsMCwwLDAtLjUzNC45NzcuOTY1Ljk2NSwwLDAsMCwuMy43NDQsMS44NjgsMS44NjgsMCwwLDAsLjc1Mi40MTEsMTIuMzE1LDEyLjMxNSwwLDAsMCwxLjI0Mi4yNzIsMTMuOTgyLDEzLjk4MiwwLDAsMSwxLjU2Ni4zNzIsMi4zMSwyLjMxLDAsMCwxLDEuMDA4LjYzNCwxLjc1OCwxLjc1OCwwLDAsMSwuNDE4LDEuMjQyLDEuOTcyLDEuOTcyLDAsMCwxLS44OTIsMS43LDQuMjQzLDQuMjQzLDAsMCwxLTIuNDczLjYyOEE2LjIzMyw2LjIzMywwLDAsMSwxNTEuMjczLDk0LjgwOVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04NS40MDkgLTg1LjA4KSIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxODcuOTgyIDEwMy4zNDYpIj48cGF0aCBjbGFzcz0iYiIgZD0iTTE1Ni4wNjgsODQuOTU4bDEwLjk5NCw1LjY4Ni0xMC45OTQsNy42MjEsMi43MjEtNi4wMzlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTU2LjA2OCAtODQuOTU4KSIvPjxwYXRoIGNsYXNzPSJjIiBkPSJNMTY3LjA2Miw4OS4zOCwxNTYuMDY4LDk3bDcuNDc1LTkuNDU1WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE1Ni4wNjggLTgzLjY5MykiLz48cGF0aCBjbGFzcz0iZCIgZD0iTTE2MS4yMzMsOTEuNzMybC01LjE2NS02Ljc3NCw3LjQ3NSwzLjg1MloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNTYuMDY4IC04NC45NTgpIi8+PHBhdGggY2xhc3M9ImUiIGQ9Ik0xNjEuMjMzLDkwLjExNWwtNS4xNjUsNi41MzQsMy43NzktOC4zODJaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTU2LjA2OCAtODMuMzQxKSIvPjwvZz48L2c+PC9zdmc+"></header>
 <div class="stats"><div class="chip"><b>16</b><span>Personas</span></div><div class="chip"><b>7</b><span>Áreas</span></div><div class="chip"><b>2</b><span>Perfiles por asignar</span></div></div>
-<div class="scroll"><svg viewBox="0 0 2516 648" role="img" aria-labelledby="org-t org-d"><title id="org-t">Organigrama del equipo</title><desc id="org-d">Cristian Celis, Director de Consultoría, es responsable de Ligia Mendoza (Project Manager), Jose Guevara, Silvia Padua y Rafael Reyes, Salvador Huerta (Plataforma GCP transversal), Jorge Ferrer, Josué Casasola y Julio Mejia. Una línea punteada une a Isai Castillo con Salvador Huerta.</desc>
+<div class="scroll"><svg viewBox="0 0 2516 658" role="img" aria-labelledby="org-t org-d"><title id="org-t">Organigrama del equipo</title><desc id="org-d">Cristian Celis, Director de Consultoría, es responsable de Ligia Mendoza (Project Manager), Jose Guevara, Silvia Padua y Rafael Reyes, Salvador Huerta (Plataforma GCP transversal), Jorge Ferrer, Josué Casasola y Julio Mejia. Una línea punteada une a Isai Castillo con Salvador Huerta.</desc>
 <defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A00"/><stop offset="1" stop-color="#EF7D19"/></linearGradient><radialGradient id="glow"><stop offset="0" stop-color="#FF7F00" stop-opacity=".28"/><stop offset="1" stop-color="#FF7F00" stop-opacity="0"/></radialGradient><pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#fff" fill-opacity=".08"/></pattern></defs>
-<rect width="2516" height="648" fill="url(#dots)"/>
+<rect width="2516" height="658" fill="url(#dots)"/>
 <ellipse cx="1258" cy="150" rx="520" ry="150" fill="url(#glow)"/>
 <path class="e" data-g="root" pathLength="1" style="--d:0.3s" d="M1258 140V170" fill="none" stroke="#FF7F00" stroke-width="3" />
 <path class="e" data-g="root" pathLength="1" style="--d:0.3s" d="M150 170H2366" fill="none" stroke="#FF7F00" stroke-width="3" />
@@ -113,9 +119,9 @@ svg:has(.n[data-g="JM"]:hover) .dot{opacity:0}
 <path class="e p" data-g="SH" style="--d:1.2s" d="M1910 340V422" fill="none" stroke="#6EA8FF" stroke-width="2" stroke-dasharray="6 5"/>
 <path class="e" data-g="JC" pathLength="1" style="--d:1.2s" d="M2138 340V422" fill="none" stroke="#B79CFF" stroke-width="2" />
 <path class="e" data-g="JM" pathLength="1" style="--d:1.2s" d="M2366 340V422" fill="none" stroke="#2CC6C6" stroke-width="2" />
-<path class="e p dd" data-g="JF SH" style="--d:1.2s" d="M1682 558V588H1796V290H1810" fill="none" stroke="#FFB347" stroke-width="3" stroke-dasharray="1 7" stroke-linecap="round"/>
-<circle cx="1682" cy="558" r="4.5" fill="#FFB347"/><circle cx="1810" cy="290" r="4.5" fill="#FFB347"/>
-<path d="M78 622H108" stroke="#FFB347" stroke-width="3" stroke-dasharray="1 7" stroke-linecap="round" fill="none"/><text x="120" y="626" font-size="12.5" font-weight="500" fill="#BFD6E6">Línea punteada: relación funcional entre Isai Castillo y Salvador Huerta</text>
+<path class="e p dd" data-g="JF SH" style="--d:1.2s" d="M1682 568V598H1796V290H1810" fill="none" stroke="#FFB347" stroke-width="3" stroke-dasharray="1 7" stroke-linecap="round"/>
+<circle cx="1682" cy="568" r="4.5" fill="#FFB347"/><circle cx="1810" cy="290" r="4.5" fill="#FFB347"/>
+<path d="M78 632H108" stroke="#FFB347" stroke-width="3" stroke-dasharray="1 7" stroke-linecap="round" fill="none"/><text x="120" y="636" font-size="12.5" font-weight="500" fill="#BFD6E6">Línea punteada: relación funcional entre Isai Castillo y Salvador Huerta</text>
 <circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="2.40s" repeatCount="indefinite" path="M1258 140V170H150V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="2.40s" repeatCount="indefinite"/></circle>
 <circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="2.75s" repeatCount="indefinite" path="M1258 140V170H590V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="2.75s" repeatCount="indefinite"/></circle>
 <circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="3.10s" repeatCount="indefinite" path="M1258 140V170H1030V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="3.10s" repeatCount="indefinite"/></circle>
@@ -134,17 +140,17 @@ svg:has(.n[data-g="JM"]:hover) .dot{opacity:0}
 <rect x="1118" y="56" width="280" height="84" rx="10" fill="url(#og)"/>
 <circle cx="1258" cy="56" r="24" fill="#FFFFFF" stroke="#04143E" stroke-width="4"/>
 <text x="1258" y="61" text-anchor="middle" font-size="14" font-weight="800" fill="#FF7F00">CC</text>
-<text x="1258" y="102" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">Cristian Celis</text>
-<text x="1258" y="124" text-anchor="middle" font-size="12.5" font-weight="500" fill="#FFFFFF">Director de Consultoría</text>
+<text x="1258" y="102" text-anchor="middle" font-size="21" font-weight="700" fill="#FFFFFF">Cristian Celis</text>
+<text x="1258" y="124" text-anchor="middle" font-size="14" font-weight="500" fill="#FFFFFF">Director de Consultoría</text>
 </g>
 <g class="n l1" data-g="LM" style="--d:0.70s">
 <rect x="50" y="220" width="200" height="120" rx="10" fill="#FFFFFF" stroke="#FF7F00" stroke-width="4"/>
 <g transform="translate(216,232) scale(.85)" fill="none" stroke="#E56F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></g>
 <circle cx="150" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
 <text x="150" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">LM</text>
-<text x="150" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Ligia Mendoza</text>
-<text x="150" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">Project Manager</text>
-<text x="150" y="304" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">Transversal</text>
+<text x="150" y="266" text-anchor="middle" font-size="18" font-weight="700" fill="#004E75">Ligia Mendoza</text>
+<text x="150" y="288" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">Project Manager</text>
+<text x="150" y="306" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">Transversal</text>
 </g>
 <g class="n l1" data-g="JG" style="--d:0.82s">
 <rect x="490" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
@@ -152,9 +158,9 @@ svg:has(.n[data-g="JM"]:hover) .dot{opacity:0}
 <g transform="translate(656,232) scale(.85)" fill="none" stroke="#1C86C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></g>
 <circle cx="590" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
 <text x="590" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">JG</text>
-<text x="590" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Jose Guevara</text>
-<text x="590" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">OCR, Invercap</text>
-<text x="590" y="304" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">e Inmobiliarios</text>
+<text x="590" y="266" text-anchor="middle" font-size="18" font-weight="700" fill="#004E75">Jose Guevara</text>
+<text x="590" y="288" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">OCR, Invercap</text>
+<text x="590" y="306" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">e Inmobiliarios</text>
 </g>
 <g class="n l1" data-g="SP" style="--d:0.94s">
 <rect x="930" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
@@ -164,9 +170,9 @@ svg:has(.n[data-g="JM"]:hover) .dot{opacity:0}
 <text x="1002" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">SP</text>
 <circle cx="1058" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
 <text x="1058" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">RR</text>
-<text x="1030" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Silvia Padua</text>
-<text x="1030" y="285" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Rafael Reyes</text>
-<text x="1030" y="307" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">Soporte y testing</text>
+<text x="1030" y="266" text-anchor="middle" font-size="18" font-weight="700" fill="#004E75">Silvia Padua</text>
+<text x="1030" y="285" text-anchor="middle" font-size="18" font-weight="700" fill="#004E75">Rafael Reyes</text>
+<text x="1030" y="307" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">Soporte y testing</text>
 </g>
 <g class="n l1" data-g="JF" style="--d:1.06s">
 <rect x="1370" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
@@ -174,9 +180,9 @@ svg:has(.n[data-g="JM"]:hover) .dot{opacity:0}
 <g transform="translate(1536,232) scale(.85)" fill="none" stroke="#C98A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2-10 5 10 5 10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></g>
 <circle cx="1470" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
 <text x="1470" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">JF</text>
-<text x="1470" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Jorge Ferrer</text>
-<text x="1470" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">Líder técnico</text>
-<text x="1470" y="304" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">y arquitectura</text>
+<text x="1470" y="266" text-anchor="middle" font-size="18" font-weight="700" fill="#004E75">Jorge Ferrer</text>
+<text x="1470" y="288" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">Líder técnico</text>
+<text x="1470" y="306" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">y arquitectura</text>
 </g>
 <g class="n l1" data-g="SH" style="--d:1.18s">
 <rect x="1810" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
@@ -184,9 +190,9 @@ svg:has(.n[data-g="JM"]:hover) .dot{opacity:0}
 <g transform="translate(1976,232) scale(.85)" fill="none" stroke="#2F6FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></g>
 <circle cx="1910" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
 <text x="1910" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">SH</text>
-<text x="1910" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Salvador Huerta</text>
-<text x="1910" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">Plataforma GCP</text>
-<text x="1910" y="304" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">Transversal</text>
+<text x="1910" y="266" text-anchor="middle" font-size="18" font-weight="700" fill="#004E75">Salvador Huerta</text>
+<text x="1910" y="288" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">Plataforma GCP</text>
+<text x="1910" y="306" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">Transversal</text>
 </g>
 <g class="n l1" data-g="JC" style="--d:1.30s">
 <rect x="2038" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
@@ -194,8 +200,8 @@ svg:has(.n[data-g="JM"]:hover) .dot{opacity:0}
 <g transform="translate(2204,232) scale(.85)" fill="none" stroke="#7A5CE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></g>
 <circle cx="2138" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
 <text x="2138" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">JC</text>
-<text x="2138" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Josué Casasola</text>
-<text x="2138" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">Front líder</text>
+<text x="2138" y="266" text-anchor="middle" font-size="18" font-weight="700" fill="#004E75">Josué Casasola</text>
+<text x="2138" y="288" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">Front líder</text>
 </g>
 <g class="n l1" data-g="JM" style="--d:1.42s">
 <rect x="2266" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
@@ -203,83 +209,83 @@ svg:has(.n[data-g="JM"]:hover) .dot{opacity:0}
 <g transform="translate(2432,232) scale(.85)" fill="none" stroke="#139A9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></g>
 <circle cx="2366" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
 <text x="2366" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">JM</text>
-<text x="2366" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Julio Mejia</text>
-<text x="2366" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#5B656B">Data & Analytics</text>
+<text x="2366" y="266" text-anchor="middle" font-size="18" font-weight="700" fill="#004E75">Julio Mejia</text>
+<text x="2366" y="288" text-anchor="middle" font-size="14" font-weight="500" fill="#5B656B">Data & Analytics</text>
 </g>
 <g class="n l2" data-g="JG" style="--d:1.50s">
-<rect x="278" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
-<clipPath id="cp7"><rect x="278" y="446" width="200" height="112" rx="10"/></clipPath><rect x="278" y="446" width="200" height="5" fill="#4FB3E8" clip-path="url(#cp7)"/>
+<rect x="278" y="446" width="200" height="122" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<clipPath id="cp7"><rect x="278" y="446" width="200" height="122" rx="10"/></clipPath><rect x="278" y="446" width="200" height="5" fill="#4FB3E8" clip-path="url(#cp7)"/>
 <circle cx="378" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
 <text x="378" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">RC</text>
-<text x="378" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Raul Chavira</text>
-<text x="378" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Invercap</text>
+<text x="378" y="492" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">Raul Chavira</text>
+<text x="378" y="514" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Invercap</text>
 </g>
 <g class="n l2" data-g="JG" style="--d:1.59s">
-<rect x="490" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
-<clipPath id="cp8"><rect x="490" y="446" width="200" height="112" rx="10"/></clipPath><rect x="490" y="446" width="200" height="5" fill="#4FB3E8" clip-path="url(#cp8)"/>
+<rect x="490" y="446" width="200" height="122" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<clipPath id="cp8"><rect x="490" y="446" width="200" height="122" rx="10"/></clipPath><rect x="490" y="446" width="200" height="5" fill="#4FB3E8" clip-path="url(#cp8)"/>
 <circle cx="590" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
 <text x="590" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">LC</text>
-<text x="590" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Luis de la Cruz</text>
-<text x="590" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Inmobiliarios</text>
+<text x="590" y="492" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">Luis de la Cruz</text>
+<text x="590" y="514" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Inmobiliarios</text>
 </g>
 <g class="n l2" data-g="JG" style="--d:1.68s">
-<rect x="702" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
-<clipPath id="cp9"><rect x="702" y="446" width="200" height="112" rx="10"/></clipPath><rect x="702" y="446" width="200" height="5" fill="#4FB3E8" clip-path="url(#cp9)"/>
+<rect x="702" y="446" width="200" height="122" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<clipPath id="cp9"><rect x="702" y="446" width="200" height="122" rx="10"/></clipPath><rect x="702" y="446" width="200" height="5" fill="#4FB3E8" clip-path="url(#cp9)"/>
 <circle cx="802" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
 <text x="802" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">GM</text>
-<text x="802" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Gabriel Martinez</text>
-<text x="802" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Inmobiliarios</text>
+<text x="802" y="492" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">Gabriel Martinez</text>
+<text x="802" y="514" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Inmobiliarios</text>
 </g>
 <g class="n l2" data-g="JF" style="--d:1.77s">
-<rect x="1158" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
-<clipPath id="cp10"><rect x="1158" y="446" width="200" height="112" rx="10"/></clipPath><rect x="1158" y="446" width="200" height="5" fill="#F6B000" clip-path="url(#cp10)"/>
+<rect x="1158" y="446" width="200" height="122" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<clipPath id="cp10"><rect x="1158" y="446" width="200" height="122" rx="10"/></clipPath><rect x="1158" y="446" width="200" height="5" fill="#F6B000" clip-path="url(#cp10)"/>
 <circle cx="1258" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
 <text x="1258" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">SQ</text>
-<text x="1258" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Servando Quezada</text>
-<text x="1258" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">PLD y Repse</text>
+<text x="1258" y="492" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">Servando Quezada</text>
+<text x="1258" y="514" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">PLD y Repse</text>
 </g>
 <g class="n l2" data-g="JF" style="--d:1.86s">
-<rect class="vac" x="1370" y="446" width="200" height="112" rx="10" fill="#04143E" fill-opacity=".35" stroke="#F6B000" stroke-width="2" stroke-dasharray="6 5"/>
+<rect class="vac" x="1370" y="446" width="200" height="122" rx="10" fill="#04143E" fill-opacity=".35" stroke="#F6B000" stroke-width="2" stroke-dasharray="6 5"/>
 <rect x="1498" y="456" width="62" height="17" rx="8.5" fill="#FF7F00"/><text x="1529" y="468" text-anchor="middle" font-size="9" font-weight="800" letter-spacing=".5" fill="#04143E">VACANTE</text>
 <circle cx="1470" cy="446" r="24" fill="#022D56" stroke="#F6B000" stroke-width="2" stroke-dasharray="4 3"/>
 <text x="1470" y="453" text-anchor="middle" font-size="20" font-weight="700" fill="#BFD6E6">?</text>
 <text x="1470" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Perfil por asignar</text>
-<text x="1470" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Fullstack front/back</text>
-<text x="1470" y="530" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Mínimo Python y Java</text>
-<text x="1470" y="546" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Perfil comodín</text>
+<text x="1470" y="514" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Fullstack front/back</text>
+<text x="1470" y="532" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Mínimo Python y Java</text>
+<text x="1470" y="550" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Perfil comodín</text>
 </g>
 <g class="n l2" data-g="JF" style="--d:1.95s">
-<rect x="1582" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
-<clipPath id="cp11"><rect x="1582" y="446" width="200" height="112" rx="10"/></clipPath><rect x="1582" y="446" width="200" height="5" fill="#F6B000" clip-path="url(#cp11)"/>
+<rect x="1582" y="446" width="200" height="122" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<clipPath id="cp11"><rect x="1582" y="446" width="200" height="122" rx="10"/></clipPath><rect x="1582" y="446" width="200" height="5" fill="#F6B000" clip-path="url(#cp11)"/>
 <circle cx="1682" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
 <text x="1682" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">IC</text>
-<text x="1682" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Isai Castillo</text>
-<text x="1682" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Webcontent y</text>
-<text x="1682" y="530" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Repositorio seguro</text>
+<text x="1682" y="492" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">Isai Castillo</text>
+<text x="1682" y="514" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Webcontent y</text>
+<text x="1682" y="532" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Repositorio seguro</text>
 </g>
 <g class="n l2" data-g="SH" style="--d:2.04s">
-<rect class="vac" x="1810" y="446" width="200" height="112" rx="10" fill="#04143E" fill-opacity=".35" stroke="#6EA8FF" stroke-width="2" stroke-dasharray="6 5"/>
+<rect class="vac" x="1810" y="446" width="200" height="122" rx="10" fill="#04143E" fill-opacity=".35" stroke="#6EA8FF" stroke-width="2" stroke-dasharray="6 5"/>
 <rect x="1938" y="456" width="62" height="17" rx="8.5" fill="#FF7F00"/><text x="1969" y="468" text-anchor="middle" font-size="9" font-weight="800" letter-spacing=".5" fill="#04143E">VACANTE</text>
 <circle cx="1910" cy="446" r="24" fill="#022D56" stroke="#6EA8FF" stroke-width="2" stroke-dasharray="4 3"/>
 <text x="1910" y="453" text-anchor="middle" font-size="20" font-weight="700" fill="#BFD6E6">?</text>
 <text x="1910" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Perfil por asignar</text>
-<text x="1910" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Por definir</text>
+<text x="1910" y="514" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Por definir</text>
 </g>
 <g class="n l2" data-g="JC" style="--d:2.13s">
-<rect x="2038" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
-<clipPath id="cp12"><rect x="2038" y="446" width="200" height="112" rx="10"/></clipPath><rect x="2038" y="446" width="200" height="5" fill="#B79CFF" clip-path="url(#cp12)"/>
+<rect x="2038" y="446" width="200" height="122" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<clipPath id="cp12"><rect x="2038" y="446" width="200" height="122" rx="10"/></clipPath><rect x="2038" y="446" width="200" height="5" fill="#B79CFF" clip-path="url(#cp12)"/>
 <circle cx="2138" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
 <text x="2138" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">MH</text>
-<text x="2138" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Miguel Hernandez</text>
-<text x="2138" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Front</text>
+<text x="2138" y="492" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">Miguel Hernandez</text>
+<text x="2138" y="514" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Front</text>
 </g>
 <g class="n l2" data-g="JM" style="--d:2.22s">
-<rect x="2266" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
-<clipPath id="cp13"><rect x="2266" y="446" width="200" height="112" rx="10"/></clipPath><rect x="2266" y="446" width="200" height="5" fill="#2CC6C6" clip-path="url(#cp13)"/>
+<rect x="2266" y="446" width="200" height="122" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<clipPath id="cp13"><rect x="2266" y="446" width="200" height="122" rx="10"/></clipPath><rect x="2266" y="446" width="200" height="5" fill="#2CC6C6" clip-path="url(#cp13)"/>
 <circle cx="2366" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
 <text x="2366" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">CM</text>
-<text x="2366" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Carlos Montiel</text>
-<text x="2366" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Data & Analytics</text>
+<text x="2366" y="492" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">Carlos Montiel</text>
+<text x="2366" y="514" text-anchor="middle" font-size="14" font-weight="500" fill="#BFD6E6">Data & Analytics</text>
 </g></svg></div>
 <div class="m" role="group" aria-label="Organigrama del equipo">
 <div class="mc root" style="--d:0.19s"><span class="avs"><i class="av">CC</i></span><span class="tx"><b>Cristian Celis</b><small>Director de Consultoría</small></span></div>
