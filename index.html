@@ -61,8 +61,11 @@ h1{font-size:clamp(28px,4vw,44px);font-weight:800;margin:0;line-height:1.05;text
 .kid::after{content:"";position:absolute;left:0;top:0;bottom:-12px;width:2px;background:#7FA8C4}
 .kid:first-child::after{top:-12px}
 .kid:last-child::after{bottom:auto;height:30px}
+.kid:first-child:last-child::after{height:42px}
 .kid::before{content:"";position:absolute;left:0;top:28px;width:18px;height:2px;background:#7FA8C4}
 @media (max-width:1279px){.scroll{display:none}.m{display:block}.logo{height:44px}.chip{padding:8px 14px}.chip b{font-size:22px}}
+.mc .tx{overflow-wrap:anywhere}
+@media (max-width:360px){.mc{padding:12px;gap:10px}.mc .av{width:38px;height:38px;font-size:12px}.mc .ic{width:20px;height:20px}.trunk{margin-left:14px}.area{padding-left:16px}.area::before{width:16px}.kids{margin-left:18px}.kid{padding-left:14px}.kid::before{width:14px}.mc b{font-size:15px}}
 @media print{.scroll{display:block!important}.m{display:none!important}}
 svg:has(.n[data-g="LM"]:hover) .n:not([data-g="LM"]):not(.l0){opacity:.22}
 svg:has(.n[data-g="LM"]:hover) .e:not([data-g~="LM"]):not([data-g="root"]){opacity:.1}
