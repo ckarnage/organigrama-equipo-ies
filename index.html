@@ -1,0 +1,266 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html{color-scheme:dark}body{margin:0}</style>
+<title>Organigrama IES</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+<style>
+:root{--blue:#004E75;--navy:#04143E;--orange:#FF7F00;--ink:#fff;--soft:#BFD6E6;color-scheme:dark;font-family:"Montserrat",-apple-system,"Segoe UI",Arial,sans-serif}
+body{background:linear-gradient(135deg,#040C37 0%,#022D56 55%,#004A72 100%);color:var(--ink);min-height:100vh;padding-block:36px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));box-sizing:border-box}
+header{max-width:2740px;margin:0 auto 20px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--orange);margin:0 0 8px}
+h1{font-size:clamp(28px,4vw,44px);font-weight:800;margin:0;line-height:1.05;text-wrap:balance}
+.logo{height:64px}
+.scroll{overflow-x:auto;max-width:2740px;margin:0 auto}
+svg{display:block;min-width:1400px;width:100%;height:auto;font-family:inherit}
+.stats{max-width:2740px;margin:0 auto 12px;display:flex;gap:14px;flex-wrap:wrap}
+.chip{display:flex;align-items:baseline;gap:10px;padding:10px 18px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:rgba(255,255,255,.06);animation:rise .7s cubic-bezier(.2,.8,.2,1) backwards}
+.chip:nth-child(2){animation-delay:.1s}.chip:nth-child(3){animation-delay:.2s}
+.chip b{font-size:28px;font-weight:800;color:var(--orange);font-variant-numeric:tabular-nums}
+.chip span{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+.n{transition:transform .25s cubic-bezier(.2,.8,.2,1);animation:rise .8s cubic-bezier(.2,.8,.2,1) var(--d,0s) backwards;cursor:default}
+.n:hover{transform:translateY(-6px)}
+.e{stroke-dasharray:1;animation:draw .7s ease-out var(--d,0s) backwards}
+.e.dd{stroke-dasharray:1 7!important}
+.e.p{stroke-dasharray:6 5;animation:fade .8s ease-out var(--d,0s) backwards}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 3s ease-out 1.5s infinite;opacity:0}
+@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.96)}}
+@keyframes draw{from{stroke-dashoffset:1}}
+@keyframes fade{from{opacity:0}}
+@keyframes pulse{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(1.22,1.5)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.dot,.pulse{display:none}}
+@media print{*{animation:none!important}.dot,.pulse{display:none}}
+.m{display:none;max-width:560px;margin:0 auto}
+.mc{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:10px;animation:rise .7s cubic-bezier(.2,.8,.2,1) var(--d,0s) backwards;box-sizing:border-box}
+.mc .avs{display:flex;flex:none}
+.mc .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:800;border:3px solid #022D56;margin-left:-10px;box-sizing:border-box}
+.mc .av:first-child{margin-left:0}
+.mc .tx{min-width:0;display:flex;flex-direction:column;gap:3px}
+.mc b{font-size:16px;font-weight:700;line-height:1.2}
+.mc small{font-size:12.5px;font-weight:500;line-height:1.35}
+.mc.root{background:linear-gradient(135deg,#FF8A00,#EF7D19);color:#fff;justify-content:center}
+.mc.root .av{background:#fff;color:#FF7F00}
+.mc.lead{background:#fff;color:#004E75}.mc.lead small{color:#778086}.mc.lead .av{background:#004E75;color:#fff}
+.mc.lead.pm{border:3px solid #FF7F00}
+.mc.sub{background:#0B3A63;border:1.5px solid #5A8DB0;color:#fff}.mc.sub small{color:#BFD6E6}.mc.sub .av,.mc.ph .av{background:#fff;color:#004E75}
+.mc.ph{background:rgba(4,20,62,.35);border:1.5px dashed #7FA8C4;color:#fff}.mc.ph small{color:#BFD6E6}
+.trunk{margin-left:22px;border-left:3px solid #FF7F00;padding-top:18px;display:flex;flex-direction:column;gap:18px}
+.area{position:relative;padding-left:22px}
+.area::before{content:"";position:absolute;left:0;top:30px;width:22px;height:3px;background:#FF7F00}
+.area.dt::before{background:none;border-top:3px dotted #FF7F00;height:0}
+.kids{margin:0 0 0 28px;border-left:2px solid #7FA8C4;padding-top:12px;display:flex;flex-direction:column;gap:12px}
+.kid{position:relative;padding-left:18px}
+.kid::before{content:"";position:absolute;left:0;top:28px;width:18px;height:2px;background:#7FA8C4}
+@media (max-width:1399px){.scroll{display:none}.m{display:block}.logo{height:44px}.chip{padding:8px 14px}.chip b{font-size:22px}}
+@media print{.scroll{display:block!important}.m{display:none!important}}
+@page{size:2820px 1000px;margin:0}
+@media print{html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{min-height:0;height:990px;overflow:hidden;padding-block:30px}}
+</style>
+<header><div><p class="eyebrow">EQUIPO TÉCNICO</p><h1>Organigrama del equipo</h1></div><img class="logo" alt="IES Systems" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTA5LjUyNCIgaGVpZ2h0PSI3MC4wNTUiIHZpZXdCb3g9IjAgMCAxMDkuNTI0IDcwLjA1NSI+PGRlZnM+PHN0eWxlPi5he29wYWNpdHk6MC42O30uYntmaWxsOiNmZmY7fS5je2ZpbGw6dXJsKCNhKTt9LmR7ZmlsbDp1cmwoI2IpO30uZXtmaWxsOnVybCgjYyk7fTwvc3R5bGU+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iLTAuMTAxIiB5MT0iMC43OTYiIHgyPSIwLjk0OSIgeTI9IjAuMDkxIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYmFiYWJhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIwLjc4MyIgeTE9IjAuOTUzIiB4Mj0iMC4zMTIiIHkyPSItMC4xNjEiIHhsaW5rOmhyZWY9IiNhIi8+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB5MT0iMC41IiB4Mj0iMSIgeTI9IjAuNSIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2EzYTNhMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGNsYXNzPSJhIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTAuNzc2IC00Ny4zMzkpIj48cGF0aCBjbGFzcz0iYiIgZD0iTTkwLjc3Niw0Ny45MTdIMTAyLjRWOTguMTU5SDkwLjc3NloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4yODMpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xNDUuNDksODguODI3djkuMzMyaC0zOC45VjQ3LjkxN2gzNy45Njh2OS4zM0gxMTguMTQ0djEwLjkxSDE0MS40N1Y3Ny4ySDExOC4xNDRWODguODI3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNy43MjkgMC4yODMpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xNDUuMjIsOTcuNjg3YTI3LjAxNywyNy4wMTcsMCwwLDEtOC45MzYtNC4ybDMuOTQ4LTguNzU3YTI2Ljc2NywyNi43NjcsMCwwLDAsNy42NzksMy44MDUsMjguODM3LDI4LjgzNywwLDAsMCw4LjksMS40MzVxNC45NTMsMCw3LjMyMi0xLjQ3MWE0LjQ0Nyw0LjQ0NywwLDAsMCwyLjM2Ny0zLjkxMywzLjc0MSwzLjc0MSwwLDAsMC0xLjQtMi45NzksMTAuNiwxMC42LDAsMCwwLTMuNTg4LTEuOXEtMi4xOTEtLjcxNy01LjkyMS0xLjU4YTgxLjU3Myw4MS41NzMsMCwwLDEtOS40LTIuNzI3LDE1LjI2NSwxNS4yNjUsMCwwLDEtNi4yOC00LjM3OSwxMS44MTIsMTEuODEyLDAsMCwxLTIuNjItOC4wMzgsMTMuOTkyLDEzLjk5MiwwLDAsMSwyLjM2OS03LjkzMUExNS45MjgsMTUuOTI4LDAsMCwxLDE0Ni44LDQ5LjQyYTI5LjE0MywyOS4xNDMsMCwwLDEsMTEuNjYzLTIuMDgxLDM4LjY1NSwzOC42NTUsMCwwLDEsOS40LDEuMTQ4LDI3Ljc5MSwyNy43OTEsMCwwLDEsOC4wMzgsMy4zbC0zLjU4OCw4LjgyOGEyOC4wMjksMjguMDI5LDAsMCwwLTEzLjkyNS0zLjk0N3EtNC44ODIsMC03LjIxMywxLjU3OGE0LjgyMiw0LjgyMiwwLDAsMC0yLjMzMyw0LjE2Myw0LjA2Nyw0LjA2NywwLDAsMCwyLjY5MiwzLjg0LDQyLjEzMSw0Mi4xMzEsMCwwLDAsOC4yMTgsMi40NzcsODIuMTQyLDgyLjE0MiwwLDAsMSw5LjQsMi43MjcsMTUuNiwxNS42LDAsMCwxLDYuMjgxLDQuMzA2LDExLjU1NywxMS41NTcsMCwwLDEsMi42MTksNy45NjgsMTMuNzE3LDEzLjcxNywwLDAsMS0yLjQsNy44NTksMTYuMTY3LDE2LjE2NywwLDAsMS03LjIxMyw1LjYzNCwyOS40LDI5LjQsMCwwLDEtMTEuNywyLjA4MUE0MS4xMTcsNDEuMTE3LDAsMCwxLDE0NS4yMiw5Ny42ODdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMi4yNDQgMCkiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTQuMjg1IDEwNC4zNjgpIj48cGF0aCBjbGFzcz0iYiIgZD0iTTEwNy45ODYsOTQuODA5YTQuMDQ3LDQuMDQ3LDAsMCwxLTEuNDE5LS43MjFsLjUtLjg2OGE0LjE3NCw0LjE3NCwwLDAsMCwxLjI4Ni42Niw1LjE0Miw1LjE0MiwwLDAsMCwxLjYxNC4yNTUsMy4wODMsMy4wODMsMCwwLDAsMS42NTEtLjM0OCwxLjExMSwxLjExMSwwLDAsMCwuNTM0LS45ODQuODgzLjg4MywwLDAsMC0uMjk1LS43MDYsMS45NDMsMS45NDMsMCwwLDAtLjc0NC0uMzg5LDEwLjQwNiwxMC40MDYsMCwwLDAtMS4xOTQtLjI1NSwxMy43MzgsMTMuNzM4LDAsMCwxLTEuNi0uMzgxLDIuMzM5LDIuMzM5LDAsMCwxLTEuMDMyLS42NTgsMS44MzcsMS44MzcsMCwwLDEtLjQyNy0xLjI4OCwyLjAxOCwyLjAxOCwwLDAsMSwuODUzLTEuNjc1LDMuODM2LDMuODM2LDAsMCwxLDIuMzczLS42NTEsNi4yLDYuMiwwLDAsMSwxLjU4MS4yMDgsNC4zNTMsNC4zNTMsMCwwLDEsMS4zLjU1MWwtLjQ4MS44ODRhNC4xMDgsNC4xMDgsMCwwLDAtMi40LS43LDIuNzg3LDIuNzg3LDAsMCwwLTEuNTkuMzcyLDEuMTQxLDEuMTQxLDAsMCwwLS41MzQuOTc3Ljk2NS45NjUsMCwwLDAsLjMuNzQ0LDEuODU4LDEuODU4LDAsMCwwLC43NTIuNDExLDEyLjM2MSwxMi4zNjEsMCwwLDAsMS4yNC4yNzIsMTMuOSwxMy45LDAsMCwxLDEuNTY2LjM3MiwyLjI5MywyLjI5MywwLDAsMSwxLjAwOC42MzQsMS43NTEsMS43NTEsMCwwLDEsLjQyLDEuMjQyLDEuOTcyLDEuOTcyLDAsMCwxLS44OTIsMS43LDQuMjQzLDQuMjQzLDAsMCwxLTIuNDczLjYyOEE2LjIzMyw2LjIzMywwLDAsMSwxMDcuOTg2LDk0LjgwOVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDYuNTY3IC04NS4wOCkiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTEyMC44NDIsODYuODQybC00LjA3OCw5LjEzNGEzLjg4OSwzLjg4OSwwLDAsMS0xLjE0OCwxLjYyOSwyLjU2NCwyLjU2NCwwLDAsMS0xLjU2Ni40ODEsMy4yLDMuMiwwLDAsMS0xLjEtLjE4NiwyLjQsMi40LDAsMCwxLS44ODQtLjU1OGwuNTEyLS44MjJhMi4wMjYsMi4wMjYsMCwwLDAsMS40ODkuNjE5LDEuNDk0LDEuNDk0LDAsMCwwLC45NTMtLjMxLDIuODI0LDIuODI0LDAsMCwwLC43MzctMS4wNTRsLjM1Ny0uNzkxLTMuNjQ1LTguMTQyaDEuMTQ4bDMuMDcsNi45MzIsMy4wNy02LjkzMloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDMuODc5IC04NS4wNikiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTEyMC42NDEsOTQuODA5YTQuMDQ3LDQuMDQ3LDAsMCwxLTEuNDE5LS43MjFsLjUtLjg2OGE0LjE3NCw0LjE3NCwwLDAsMCwxLjI4Ni42Niw1LjE0Miw1LjE0MiwwLDAsMCwxLjYxNC4yNTUsMy4wODMsMy4wODMsMCwwLDAsMS42NTEtLjM0OCwxLjExMSwxLjExMSwwLDAsMCwuNTM0LS45ODQuODgzLjg4MywwLDAsMC0uMjk1LS43MDYsMS45NDMsMS45NDMsMCwwLDAtLjc0NC0uMzg5LDEwLjQwNywxMC40MDcsMCwwLDAtMS4xOTQtLjI1NSwxMy43NCwxMy43NCwwLDAsMS0xLjYtLjM4MSwyLjMzOSwyLjMzOSwwLDAsMS0xLjAzMi0uNjU4LDEuODM3LDEuODM3LDAsMCwxLS40MjctMS4yODgsMi4wMTgsMi4wMTgsMCwwLDEsLjg1My0xLjY3NSwzLjgzNywzLjgzNywwLDAsMSwyLjM3My0uNjUxLDYuMiw2LjIsMCwwLDEsMS41ODEuMjA4LDQuMzUzLDQuMzUzLDAsMCwxLDEuMy41NTFsLS40ODEuODg0YTQuMTA4LDQuMTA4LDAsMCwwLTIuNC0uNywyLjc4NywyLjc4NywwLDAsMC0xLjU5LjM3MiwxLjE0MSwxLjE0MSwwLDAsMC0uNTM0Ljk3Ny45NjUuOTY1LDAsMCwwLC4zLjc0NCwxLjg1OCwxLjg1OCwwLDAsMCwuNzUyLjQxMSwxMi4zNjMsMTIuMzYzLDAsMCwwLDEuMjQuMjcyLDEzLjksMTMuOSwwLDAsMSwxLjU2Ni4zNzIsMi4yOTMsMi4yOTMsMCwwLDEsMS4wMDguNjM0LDEuNzUxLDEuNzUxLDAsMCwxLC40MiwxLjI0MiwxLjk3MiwxLjk3MiwwLDAsMS0uODkyLDEuNyw0LjI0Myw0LjI0MywwLDAsMS0yLjQ3My42MjhBNi4yMzMsNi4yMzMsMCwwLDEsMTIwLjY0MSw5NC44MDlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTAwLjM4MSAtODUuMDgpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xMzAuODMsOTUuMDg4YTIuMDg2LDIuMDg2LDAsMCwxLS43NjguNDI2LDMuMDg4LDMuMDg4LDAsMCwxLS45NTMuMTQ3LDIuMTYsMi4xNiwwLDAsMS0yLjM4OC0yLjM3M1Y4OC4zNThoLTEuNDU4di0uOTNoMS40NThWODUuNjQ1aDEuMXYxLjc4MkgxMzAuM3YuOTNoLTIuNDgydjQuODdhMS41NDQsMS41NDQsMCwwLDAsLjM2NSwxLjEwOSwxLjM4MiwxLjM4MiwwLDAsMCwxLjA0Ny4zOCwyLjA1NiwyLjA1NiwwLDAsMCwuNjYtLjEwOSwxLjY3NCwxLjY3NCwwLDAsMCwuNTUxLS4zMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC05Ny40MjkgLTg1LjY0NSkiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTEzOC41Niw5MS4yODJoLTYuODIyYTIuOTEyLDIuOTEyLDAsMCwwLC45NzcsMi4wNTUsMy4yMzksMy4yMzksMCwwLDAsMi4yMzMuNzgzLDMuNTMyLDMuNTMyLDAsMCwwLDEuNC0uMjcxLDMuMDUxLDMuMDUxLDAsMCwwLDEuMS0uOGwuNjIxLjcxM2EzLjUsMy41LDAsMCwxLTEuMzU2Ljk5Myw0LjU4Nyw0LjU4NywwLDAsMS0xLjc5MS4zNDEsNC41MzcsNC41MzcsMCwwLDEtMi4yMjYtLjUzNCwzLjg1NiwzLjg1NiwwLDAsMS0xLjUxMS0xLjQ4MSw0LjIsNC4yLDAsMCwxLS41NDMtMi4xMzksNC4zNjksNC4zNjksMCwwLDEsLjUyLTIuMTQxLDMuNzU5LDMuNzU5LDAsMCwxLDEuNDI2LTEuNDcyLDMuOTg1LDMuOTg1LDAsMCwxLDIuMDQtLjUyNywzLjk0LDMuOTQsMCwwLDEsMi4wMzEuNTI3LDMuNzMzLDMuNzMzLDAsMCwxLDEuNDExLDEuNDY1LDQuNDE2LDQuNDE2LDAsMCwxLC41MTIsMi4xNDhaTTEzMi42NDUsODguNWEyLjk0OCwyLjk0OCwwLDAsMC0uOTA3LDEuOTYyaDUuNzg0YTIuOTU2LDIuOTU2LDAsMCwwLS45MDgtMS45NjIsMywzLDAsMCwwLTMuOTY5LDBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTQuODAyIC04NS4wOCkiLz48cGF0aCBjbGFzcz0iYiIgZD0iTTE1MS4xMDUsODcuNjg0YTMuNTU2LDMuNTU2LDAsMCwxLC44NzUsMi42MDV2NC43M2gtMS4xVjkwLjRhMi43NjYsMi43NjYsMCwwLDAtLjYxMy0xLjkzOCwyLjIzMSwyLjIzMSwwLDAsMC0xLjcyOC0uNjY3LDIuNiwyLjYsMCwwLDAtMiwuNzgzLDMuMDQ5LDMuMDQ5LDAsMCwwLS43MywyLjE2M3Y0LjI4aC0xLjFWOTAuNGEyLjc3MywyLjc3MywwLDAsMC0uNjEyLTEuOTM4LDIuMjUzLDIuMjUzLDAsMCwwLTEuNzQ1LS42NjcsMi42MDgsMi42MDgsMCwwLDAtMS45OTIuNzgzLDMuMDMyLDMuMDMyLDAsMCwwLS43MzcsMi4xNjN2NC4yOGgtMS4xVjg2Ljg2MmgxLjA1NHYxLjQ4OWEyLjkzNCwyLjkzNCwwLDAsMSwxLjIwOS0xLjE0NiwzLjgsMy44LDAsMCwxLDEuNzg0LS40LDMuNSwzLjUsMCwwLDEsMS43NzYuNDMzLDIuNjgzLDIuNjgzLDAsMCwxLDEuMTI0LDEuMjg4LDMuMTczLDMuMTczLDAsMCwxLDEuMy0xLjI2NCwzLjk4MiwzLjk4MiwwLDAsMSwxLjkyOS0uNDU3QTMuMjQ1LDMuMjQ1LDAsMCwxLDE1MS4xMDUsODcuNjg0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTkwLjk0OCAtODUuMDgpIi8+PHBhdGggY2xhc3M9ImIiIGQ9Ik0xNTEuMjczLDk0LjgwOWE0LjA2LDQuMDYsMCwwLDEtMS40MTktLjcyMWwuNS0uODY4YTQuMTY2LDQuMTY2LDAsMCwwLDEuMjg4LjY2LDUuMTMyLDUuMTMyLDAsMCwwLDEuNjEyLjI1NSwzLjA4MywzLjA4MywwLDAsMCwxLjY1MS0uMzQ4LDEuMTA4LDEuMTA4LDAsMCwwLC41MzQtLjk4NC44ODMuODgzLDAsMCwwLS4yOTUtLjcwNiwxLjk0MywxLjk0MywwLDAsMC0uNzQ0LS4zODksMTAuNDA3LDEwLjQwNywwLDAsMC0xLjE5NC0uMjU1LDEzLjczOCwxMy43MzgsMCwwLDEtMS42LS4zODEsMi4zMzksMi4zMzksMCwwLDEtMS4wMzItLjY1OCwxLjgzNiwxLjgzNiwwLDAsMS0uNDI2LTEuMjg4QTIuMDE3LDIuMDE3LDAsMCwxLDE1MSw4Ny40NTJhMy44MzcsMy44MzcsMCwwLDEsMi4zNzMtLjY1MSw2LjIsNi4yLDAsMCwxLDEuNTgxLjIwOCw0LjMzNiw0LjMzNiwwLDAsMSwxLjMuNTUxbC0uNDgxLjg4NGE0LjEwOCw0LjEwOCwwLDAsMC0yLjQtLjcsMi43ODcsMi43ODcsMCwwLDAtMS41OS4zNzIsMS4xNDEsMS4xNDEsMCwwLDAtLjUzNC45NzcuOTY1Ljk2NSwwLDAsMCwuMy43NDQsMS44NjgsMS44NjgsMCwwLDAsLjc1Mi40MTEsMTIuMzE1LDEyLjMxNSwwLDAsMCwxLjI0Mi4yNzIsMTMuOTgyLDEzLjk4MiwwLDAsMSwxLjU2Ni4zNzIsMi4zMSwyLjMxLDAsMCwxLDEuMDA4LjYzNCwxLjc1OCwxLjc1OCwwLDAsMSwuNDE4LDEuMjQyLDEuOTcyLDEuOTcyLDAsMCwxLS44OTIsMS43LDQuMjQzLDQuMjQzLDAsMCwxLTIuNDczLjYyOEE2LjIzMyw2LjIzMywwLDAsMSwxNTEuMjczLDk0LjgwOVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04NS40MDkgLTg1LjA4KSIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxODcuOTgyIDEwMy4zNDYpIj48cGF0aCBjbGFzcz0iYiIgZD0iTTE1Ni4wNjgsODQuOTU4bDEwLjk5NCw1LjY4Ni0xMC45OTQsNy42MjEsMi43MjEtNi4wMzlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTU2LjA2OCAtODQuOTU4KSIvPjxwYXRoIGNsYXNzPSJjIiBkPSJNMTY3LjA2Miw4OS4zOCwxNTYuMDY4LDk3bDcuNDc1LTkuNDU1WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE1Ni4wNjggLTgzLjY5MykiLz48cGF0aCBjbGFzcz0iZCIgZD0iTTE2MS4yMzMsOTEuNzMybC01LjE2NS02Ljc3NCw3LjQ3NSwzLjg1MloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNTYuMDY4IC04NC45NTgpIi8+PHBhdGggY2xhc3M9ImUiIGQ9Ik0xNjEuMjMzLDkwLjExNWwtNS4xNjUsNi41MzQsMy43NzktOC4zODJaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTU2LjA2OCAtODMuMzQxKSIvPjwvZz48L2c+PC9zdmc+"></header>
+<div class="stats"><div class="chip"><b>16</b><span>Personas</span></div><div class="chip"><b>7</b><span>Áreas</span></div><div class="chip"><b>2</b><span>Perfiles por asignar</span></div></div>
+<div class="scroll"><svg viewBox="0 0 2740 648" role="img" aria-labelledby="org-t org-d"><title id="org-t">Organigrama del equipo</title><desc id="org-d">Cristian Celis es responsable de Ligia Mendoza (Project Manager), Jose Guevara, Silvia Padua y Rafael Reyes, Salvador Huerta (Plataforma GCP transversal), Jorge Ferrer, Josué Casasola y Julio Mejia. Una línea punteada une a Isai Castillo con Salvador Huerta.</desc>
+<defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A00"/><stop offset="1" stop-color="#EF7D19"/></linearGradient><radialGradient id="glow"><stop offset="0" stop-color="#FF7F00" stop-opacity=".28"/><stop offset="1" stop-color="#FF7F00" stop-opacity="0"/></radialGradient><pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#fff" fill-opacity=".08"/></pattern></defs>
+<rect width="2740" height="648" fill="url(#dots)"/>
+<ellipse cx="1370" cy="150" rx="520" ry="150" fill="url(#glow)"/>
+<path class="e" pathLength="1" style="--d:0.3s" d="M1370 126V160" fill="none" stroke="#FF7F00" stroke-width="3" />
+<path class="e" pathLength="1" style="--d:0.3s" d="M178 160H2562" fill="none" stroke="#FF7F00" stroke-width="3" />
+<path class="e" pathLength="1" style="--d:0.3s" d="M178 160V196" fill="none" stroke="#FF7F00" stroke-width="3" />
+<path class="e" pathLength="1" style="--d:0.3s" d="M650 160V196" fill="none" stroke="#FF7F00" stroke-width="3" />
+<path class="e" pathLength="1" style="--d:0.3s" d="M1122 160V196" fill="none" stroke="#FF7F00" stroke-width="3" />
+<path class="e" pathLength="1" style="--d:0.3s" d="M1594 160V196" fill="none" stroke="#FF7F00" stroke-width="3" />
+<path class="e" pathLength="1" style="--d:0.3s" d="M2066 160V196" fill="none" stroke="#FF7F00" stroke-width="3" />
+<path class="e" pathLength="1" style="--d:0.3s" d="M2314 160V196" fill="none" stroke="#FF7F00" stroke-width="3" />
+<path class="e" pathLength="1" style="--d:0.3s" d="M2562 160V196" fill="none" stroke="#FF7F00" stroke-width="3" />
+<path class="e" pathLength="1" style="--d:1.2s" d="M650 340V386" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e" pathLength="1" style="--d:1.2s" d="M426 386H874" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e" pathLength="1" style="--d:1.2s" d="M426 386V422" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e" pathLength="1" style="--d:1.2s" d="M650 386V422" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e" pathLength="1" style="--d:1.2s" d="M874 386V422" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e" pathLength="1" style="--d:1.2s" d="M1594 340V386" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e" pathLength="1" style="--d:1.2s" d="M1370 386H1818" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e" pathLength="1" style="--d:1.2s" d="M1370 386V422" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e p" style="--d:1.2s" d="M1594 386V422" fill="none" stroke="#7FA8C4" stroke-width="2" stroke-dasharray="6 5"/>
+<path class="e" pathLength="1" style="--d:1.2s" d="M1818 386V422" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e p" style="--d:1.2s" d="M2066 340V422" fill="none" stroke="#7FA8C4" stroke-width="2" stroke-dasharray="6 5"/>
+<path class="e" pathLength="1" style="--d:1.2s" d="M2314 340V422" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e" pathLength="1" style="--d:1.2s" d="M2562 340V422" fill="none" stroke="#7FA8C4" stroke-width="2" />
+<path class="e p dd" style="--d:1.2s" d="M1818 558V588H1942V290H1966" fill="none" stroke="#FFB347" stroke-width="3" stroke-dasharray="1 7" stroke-linecap="round"/>
+<circle cx="1818" cy="558" r="4.5" fill="#FFB347"/><circle cx="1966" cy="290" r="4.5" fill="#FFB347"/>
+<path d="M78 622H108" stroke="#FFB347" stroke-width="3" stroke-dasharray="1 7" stroke-linecap="round" fill="none"/><text x="120" y="626" font-size="12.5" font-weight="500" fill="#BFD6E6">Línea punteada: relación funcional entre Isai Castillo y Salvador Huerta</text>
+<circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="2.40s" repeatCount="indefinite" path="M1370 126V160H178V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="2.40s" repeatCount="indefinite"/></circle>
+<circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="2.75s" repeatCount="indefinite" path="M1370 126V160H650V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="2.75s" repeatCount="indefinite"/></circle>
+<circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="3.10s" repeatCount="indefinite" path="M1370 126V160H1122V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="3.10s" repeatCount="indefinite"/></circle>
+<circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="3.45s" repeatCount="indefinite" path="M1370 126V160H1594V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="3.45s" repeatCount="indefinite"/></circle>
+<circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="3.80s" repeatCount="indefinite" path="M1370 126V160H2066V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="3.80s" repeatCount="indefinite"/></circle>
+<circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="4.15s" repeatCount="indefinite" path="M1370 126V160H2314V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="4.15s" repeatCount="indefinite"/></circle>
+<circle class="dot" r="5" fill="#FFB347"><animateMotion dur="3.4s" begin="4.50s" repeatCount="indefinite" path="M1370 126V160H2562V196"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="3.4s" begin="4.50s" repeatCount="indefinite"/></circle>
+<rect class="pulse" x="1230" y="56" width="280" height="70" rx="10" fill="none" stroke="#FF7F00" stroke-width="2"/>
+<circle cx="1370" cy="126" r="4" fill="#FF7F00"/>
+<circle cx="650" cy="340" r="4" fill="#FF7F00"/>
+<circle cx="1594" cy="340" r="4" fill="#FF7F00"/>
+<circle cx="2066" cy="340" r="4" fill="#FF7F00"/>
+<circle cx="2314" cy="340" r="4" fill="#FF7F00"/>
+<circle cx="2562" cy="340" r="4" fill="#FF7F00"/>
+<g class="n l0" style="--d:0.10s">
+<rect x="1230" y="56" width="280" height="70" rx="10" fill="url(#og)"/>
+<circle cx="1370" cy="56" r="24" fill="#FFFFFF" stroke="#04143E" stroke-width="4"/>
+<text x="1370" y="61" text-anchor="middle" font-size="14" font-weight="800" fill="#FF7F00">CC</text>
+<text x="1370" y="102" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">Cristian Celis</text>
+</g>
+<g class="n l1" style="--d:0.70s">
+<rect x="78" y="220" width="200" height="120" rx="10" fill="#FFFFFF" stroke="#FF7F00" stroke-width="4"/>
+<circle cx="178" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
+<text x="178" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">LM</text>
+<text x="178" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Ligia Mendoza</text>
+<text x="178" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">Project Manager</text>
+<text x="178" y="304" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">Transversal</text>
+</g>
+<g class="n l1" style="--d:0.82s">
+<rect x="550" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
+<circle cx="650" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
+<text x="650" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">JG</text>
+<text x="650" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Jose Guevara</text>
+<text x="650" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">OCR, Invercap</text>
+<text x="650" y="304" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">e Inmobiliarios</text>
+</g>
+<g class="n l1" style="--d:0.94s">
+<rect x="1022" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
+<circle cx="1094" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
+<text x="1094" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">SP</text>
+<circle cx="1150" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
+<text x="1150" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">RR</text>
+<text x="1122" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Silvia Padua</text>
+<text x="1122" y="285" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Rafael Reyes</text>
+<text x="1122" y="307" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">Soporte y testing</text>
+</g>
+<g class="n l1" style="--d:1.06s">
+<rect x="1494" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
+<circle cx="1594" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
+<text x="1594" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">JF</text>
+<text x="1594" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Jorge Ferrer</text>
+<text x="1594" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">Líder técnico</text>
+<text x="1594" y="304" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">y arquitectura</text>
+</g>
+<g class="n l1" style="--d:1.18s">
+<rect x="1966" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
+<circle cx="2066" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
+<text x="2066" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">SH</text>
+<text x="2066" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Salvador Huerta</text>
+<text x="2066" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">Plataforma GCP transversal</text>
+<text x="2066" y="304" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">Configuración de plataforma</text>
+</g>
+<g class="n l1" style="--d:1.30s">
+<rect x="2214" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
+<circle cx="2314" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
+<text x="2314" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">JC</text>
+<text x="2314" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Josué Casasola</text>
+<text x="2314" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">Front líder</text>
+</g>
+<g class="n l1" style="--d:1.42s">
+<rect x="2462" y="220" width="200" height="120" rx="10" fill="#FFFFFF"/>
+<circle cx="2562" cy="220" r="24" fill="#004E75" stroke="#022D56" stroke-width="4"/>
+<text x="2562" y="225" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">JM</text>
+<text x="2562" y="266" text-anchor="middle" font-size="17" font-weight="700" fill="#004E75">Julio Mejia</text>
+<text x="2562" y="288" text-anchor="middle" font-size="12.5" font-weight="500" fill="#778086">Data & Analytics</text>
+</g>
+<g class="n l2" style="--d:1.50s">
+<rect x="326" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<circle cx="426" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
+<text x="426" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">RC</text>
+<text x="426" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Raul Chavira</text>
+<text x="426" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Invercap</text>
+</g>
+<g class="n l2" style="--d:1.59s">
+<rect x="550" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<circle cx="650" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
+<text x="650" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">LC</text>
+<text x="650" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Luis de la Cruz</text>
+<text x="650" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Inmobiliarios</text>
+</g>
+<g class="n l2" style="--d:1.68s">
+<rect x="774" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<circle cx="874" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
+<text x="874" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">GM</text>
+<text x="874" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Gabriel Martinez</text>
+<text x="874" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Inmobiliarios</text>
+</g>
+<g class="n l2" style="--d:1.77s">
+<rect x="1270" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<circle cx="1370" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
+<text x="1370" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">SQ</text>
+<text x="1370" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Servando Quezada</text>
+<text x="1370" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">PLD y Repse</text>
+</g>
+<g class="n l2" style="--d:1.86s">
+<rect x="1494" y="446" width="200" height="112" rx="10" fill="#04143E" fill-opacity=".35" stroke="#7FA8C4" stroke-width="1.5" stroke-dasharray="6 5"/>
+<circle cx="1594" cy="446" r="24" fill="#022D56" stroke="#7FA8C4" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="1594" y="453" text-anchor="middle" font-size="20" font-weight="700" fill="#BFD6E6">?</text>
+<text x="1594" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Perfil por asignar</text>
+<text x="1594" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Fullstack front/back</text>
+<text x="1594" y="530" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Mínimo Python y Java</text>
+<text x="1594" y="546" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Perfil comodín</text>
+</g>
+<g class="n l2" style="--d:1.95s">
+<rect x="1718" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<circle cx="1818" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
+<text x="1818" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">IC</text>
+<text x="1818" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Isai Castillo</text>
+<text x="1818" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Webcontent y</text>
+<text x="1818" y="530" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Repositorio seguro</text>
+</g>
+<g class="n l2" style="--d:2.04s">
+<rect x="1966" y="446" width="200" height="112" rx="10" fill="#04143E" fill-opacity=".35" stroke="#7FA8C4" stroke-width="1.5" stroke-dasharray="6 5"/>
+<circle cx="2066" cy="446" r="24" fill="#022D56" stroke="#7FA8C4" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="2066" y="453" text-anchor="middle" font-size="20" font-weight="700" fill="#BFD6E6">?</text>
+<text x="2066" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Perfil por asignar</text>
+<text x="2066" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Por definir</text>
+</g>
+<g class="n l2" style="--d:2.13s">
+<rect x="2214" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<circle cx="2314" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
+<text x="2314" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">MH</text>
+<text x="2314" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Miguel Hernandez</text>
+<text x="2314" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Front</text>
+</g>
+<g class="n l2" style="--d:2.22s">
+<rect x="2462" y="446" width="200" height="112" rx="10" fill="#0B3A63" stroke="#5A8DB0" stroke-width="1.5"/>
+<circle cx="2562" cy="446" r="24" fill="#FFFFFF" stroke="#022D56" stroke-width="4"/>
+<text x="2562" y="451" text-anchor="middle" font-size="14" font-weight="800" fill="#004E75">CM</text>
+<text x="2562" y="492" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Carlos Montiel</text>
+<text x="2562" y="514" text-anchor="middle" font-size="12.5" font-weight="500" fill="#BFD6E6">Data & Analytics</text>
+</g></svg></div>
+<div class="m" aria-label="Organigrama del equipo, vista móvil">
+<div class="mc root" style="--d:0.19s"><span class="avs"><i class="av">CC</i></span><span class="tx"><b>Cristian Celis</b><small></small></span></div>
+<div class="trunk">
+<div class="area"><div class="mc lead pm" style="--d:0.28s"><span class="avs"><i class="av">LM</i></span><span class="tx"><b>Ligia Mendoza</b><small>Project Manager<br>Transversal</small></span></div>
+</div>
+<div class="area"><div class="mc lead" style="--d:0.37s"><span class="avs"><i class="av">JG</i></span><span class="tx"><b>Jose Guevara</b><small>OCR, Invercap<br>e Inmobiliarios</small></span></div>
+<div class="kids">
+<div class="kid"><div class="mc sub" style="--d:0.46s"><span class="avs"><i class="av">RC</i></span><span class="tx"><b>Raul Chavira</b><small>Invercap</small></span></div></div>
+<div class="kid"><div class="mc sub" style="--d:0.55s"><span class="avs"><i class="av">LC</i></span><span class="tx"><b>Luis de la Cruz</b><small>Inmobiliarios</small></span></div></div>
+<div class="kid"><div class="mc sub" style="--d:0.64s"><span class="avs"><i class="av">GM</i></span><span class="tx"><b>Gabriel Martinez</b><small>Inmobiliarios</small></span></div></div>
+</div>
+</div>
+<div class="area"><div class="mc lead" style="--d:0.73s"><span class="avs"><i class="av">SP</i><i class="av">RR</i></span><span class="tx"><b>Silvia Padua<br>Rafael Reyes</b><small>Soporte y testing</small></span></div>
+</div>
+<div class="area"><div class="mc lead" style="--d:0.82s"><span class="avs"><i class="av">JF</i></span><span class="tx"><b>Jorge Ferrer</b><small>Líder técnico<br>y arquitectura</small></span></div>
+<div class="kids">
+<div class="kid"><div class="mc sub" style="--d:0.91s"><span class="avs"><i class="av">SQ</i></span><span class="tx"><b>Servando Quezada</b><small>PLD y Repse</small></span></div></div>
+<div class="kid"><div class="mc ph" style="--d:1.00s"><span class="avs"><i class="av">?</i></span><span class="tx"><b>Perfil por asignar</b><small>Fullstack front/back<br>Mínimo Python y Java<br>Perfil comodín</small></span></div></div>
+<div class="kid"><div class="mc sub" style="--d:1.09s"><span class="avs"><i class="av">IC</i></span><span class="tx"><b>Isai Castillo</b><small>Webcontent y<br>Repositorio seguro<br>· · · Línea punteada a Salvador Huerta</small></span></div></div>
+</div>
+</div>
+<div class="area"><div class="mc lead" style="--d:1.18s"><span class="avs"><i class="av">SH</i></span><span class="tx"><b>Salvador Huerta</b><small>Plataforma GCP transversal<br>Configuración de plataforma</small></span></div>
+<div class="kids">
+<div class="kid"><div class="mc ph" style="--d:1.27s"><span class="avs"><i class="av">?</i></span><span class="tx"><b>Perfil por asignar</b><small>Por definir</small></span></div></div>
+</div>
+</div>
+<div class="area"><div class="mc lead" style="--d:1.36s"><span class="avs"><i class="av">JC</i></span><span class="tx"><b>Josué Casasola</b><small>Front líder</small></span></div>
+<div class="kids">
+<div class="kid"><div class="mc sub" style="--d:1.45s"><span class="avs"><i class="av">MH</i></span><span class="tx"><b>Miguel Hernandez</b><small>Front</small></span></div></div>
+</div>
+</div>
+<div class="area"><div class="mc lead" style="--d:1.54s"><span class="avs"><i class="av">JM</i></span><span class="tx"><b>Julio Mejia</b><small>Data & Analytics</small></span></div>
+<div class="kids">
+<div class="kid"><div class="mc sub" style="--d:1.63s"><span class="avs"><i class="av">CM</i></span><span class="tx"><b>Carlos Montiel</b><small>Data & Analytics</small></span></div></div>
+</div>
+</div>
+</div></div></html>
